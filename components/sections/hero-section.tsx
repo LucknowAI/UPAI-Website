@@ -50,14 +50,6 @@ export default function HeroSection() {
             Explore Programs
           </Button>
         </div>
-
-        {/* Added scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-0 animate-fade-in-delay-600">
-          <span className="text-sm text-muted-foreground mb-2">Scroll to explore</span>
-          <div className="w-6 h-10 border-2 border-muted-foreground rounded-full flex justify-center p-1">
-            <div className="w-1.5 h-1.5 bg-muted-foreground rounded-full animate-bounce"></div>
-          </div>
-        </div>
       </div>
     </section>
   )

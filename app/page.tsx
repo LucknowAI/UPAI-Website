@@ -13,6 +13,7 @@ import EventsSection from "@/components/sections/events-section"
 import NewsSection from "@/components/sections/news-section"
 import ContactSection from "@/components/sections/contact-section"
 import Footer from "@/components/footer"
+import { ScrollButton } from "@/components/ui/scroll-button"
 
 export default function Home() {
   return (
@@ -35,6 +36,7 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
+      <ScrollButton targetId="next-section" />
     </div>
   )
 }
