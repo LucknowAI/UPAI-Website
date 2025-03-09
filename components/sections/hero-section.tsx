@@ -46,7 +46,7 @@ export default function HeroSection() {
             Join Our Community
             <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Button>
-          <Button size="lg" variant="outline" className="border-secondary/50 hover:bg-secondary/10 transition-colors">
+          <Button size="lg" variant="outline" className="border-secondary/50 hover:bg-gray-300 transition-colors">
             Explore Programs
           </Button>
         </div>
