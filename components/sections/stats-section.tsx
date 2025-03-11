@@ -29,7 +29,7 @@ const stats = [
 
 export default function StatsSection() {
   return (
-    <section className="py-16 relative bg-gradient-to-b from-background to-background/90">
+    <section className="py-24 relative bg-gradient-to-b from-background to-background/90">
       <div className="container">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div className="space-y-2">

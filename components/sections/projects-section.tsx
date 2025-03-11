@@ -86,7 +86,7 @@ export default function ProjectsSection() {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="outline" className="border-primary/50 hover:bg-primary/10 transition-colors">
+          <Button variant="outline" className="border-primary/50 hover:bg-yellow-500 transition-colors">
             View All Projects
           </Button>
         </div>

@@ -3,12 +3,12 @@ import { Button } from "@/components/ui/button"
 
 export default function HeroSection() {
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden">
+    <section className="relative py-32 md:py-56 overflow-hidden">
       {/* Subtle gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-primary/3 to-transparent"></div>
       <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-radial from-secondary/10 to-transparent blur-3xl"></div>
 
-      <div className="container relative z-10 flex flex-col items-center text-center">
+      <div className="container relative flex flex-col items-center text-center">
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white via-white/95 to-white/90">
           Uttar Pradesh AI Labs
         </h1>
@@ -26,7 +26,7 @@ export default function HeroSection() {
           <Button 
             size="lg" 
             variant="outline" 
-            className="border-primary/20 hover:bg-primary/10 transition-colors"
+            className="border-primary/20 hover:bg-yellow-500 transition-colors"
           >
             Explore Programs
           </Button>

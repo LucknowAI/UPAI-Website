@@ -65,8 +65,8 @@ export default function ResearchSection() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <Button variant="outline" className="border-primary/50 hover:bg-primary/10 transition-colors">
+        <div className="mt-12 text-center ">
+          <Button variant="outline" className="border-primary/50 hover:bg-yellow-500 transition-colors">
             View Research Publications
           </Button>
         </div>
