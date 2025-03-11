@@ -1,34 +1,35 @@
 import { ArrowRight, ExternalLink, Github, Calendar } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import Image from "next/image"
 
 const projects = [
   {
     title: "UP Crop Disease Detection",
-    description: "An AI system that helps farmers identify crop diseases through smartphone images.",
-    image: "/placeholder.svg?height=300&width=500",
-    date: "2023",
-    github: "#",
-    demo: "#",
+    description: "AI-powered mobile app for farmers to detect and diagnose crop diseases using photos.",
+    image: "/projects/crop-disease.jpg",
     tags: ["Computer Vision", "Mobile App", "Agriculture"],
+    demoLink: "#",
+    repoLink: "#",
+    date: "Jun 2023",
   },
   {
-    title: "Hindi Speech Recognition",
-    description: "Advanced speech recognition model for Hindi and its regional dialects.",
-    image: "/placeholder.svg?height=300&width=500",
-    date: "2023",
-    github: "#",
-    demo: "#",
-    tags: ["NLP", "Speech Recognition", "Regional Languages"],
+    title: "Hindi Voice Assistant",
+    description: "Natural language voice assistant that understands Hindi and regional dialects of UP.",
+    image: "/projects/voice-assistant.jpg",
+    tags: ["NLP", "Speech Recognition", "Accessibility"],
+    demoLink: "#",
+    repoLink: "#",
+    date: "Aug 2023",
   },
   {
-    title: "Smart Traffic Management",
-    description: "AI-powered traffic management system deployed in Lucknow to reduce congestion.",
-    image: "/placeholder.svg?height=300&width=500",
-    date: "2022",
-    github: "#",
-    demo: "#",
-    tags: ["Computer Vision", "IoT", "Smart Cities"],
+    title: "Traffic Flow Optimization",
+    description: "AI system to optimize traffic light timing in Lucknow based on real-time traffic data.",
+    image: "/projects/traffic-flow.jpg",
+    tags: ["Smart Cities", "Computer Vision", "IoT"],
+    demoLink: "#",
+    repoLink: "#",
+    date: "Oct 2023",
   },
 ]
 
@@ -50,50 +51,35 @@ export default function ProjectsSection() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`opacity-0 animate-fade-in-delay-${(index + 1) * 100} group overflow-hidden rounded-lg border border-white/10 bg-card/70 backdrop-blur-md hover:border-primary/50 transition-all duration-300 shadow-lg`}
+              className="group overflow-hidden rounded-lg border border-white/10 bg-card/70 backdrop-blur-md hover:border-primary/50 transition-all duration-300 shadow-lg"
             >
-              <div className="aspect-video relative overflow-hidden">
-                <img
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute top-4 right-4 flex gap-2">
-                  <Link
-                    href={project.github}
-                    className="bg-background/80 p-2 rounded-full hover:bg-primary/20 transition-colors"
-                    aria-label="View on GitHub"
-                  >
-                    <Github className="h-4 w-4" />
-                  </Link>
-                  <Link
-                    href={project.demo}
-                    className="bg-background/80 p-2 rounded-full hover:bg-primary/20 transition-colors"
-                    aria-label="View demo"
-                  >
-                    <ExternalLink className="h-4 w-4" />
-                  </Link>
+              <div className="relative h-48 w-full overflow-hidden">
+                {project.image && (
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent opacity-50"></div>
+                )}
+                <div className="absolute bottom-4 left-4 z-10 flex items-center text-sm text-white/80">
+                  <Calendar className="mr-1 h-4 w-4" />
+                  {project.date}
                 </div>
               </div>
               <div className="p-6">
-                <div className="flex items-center gap-2 text-muted-foreground mb-2">
-                  <Calendar className="h-4 w-4" />
-                  <span className="text-sm">{project.date}</span>
-                </div>
-                <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
+                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                 <p className="text-muted-foreground mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mt-2 mb-4">
                   {project.tags.map((tag, idx) => (
                     <span key={idx} className="text-xs bg-primary/20 text-foreground px-2 py-1 rounded-full">
                       {tag}
                     </span>
                   ))}
                 </div>
-                <Link href="#" className="inline-flex items-center text-secondary font-medium hover:underline">
-                  Learn more <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                <div className="flex items-center justify-between">
+                  <a href={project.demoLink} className="inline-flex items-center text-secondary font-medium group hover:underline">
+                    Demo <ExternalLink className="ml-1 h-4 w-4" />
+                  </a>
+                  <a href={project.repoLink} className="inline-flex items-center text-secondary font-medium group hover:underline">
+                    Code <Github className="ml-1 h-4 w-4" />
+                  </a>
+                </div>
               </div>
             </div>
           ))}

@@ -1,30 +1,30 @@
-import { BookOpen, BarChart, LineChart, PieChart } from "lucide-react"
+import { ArrowRight, BookOpen, Brain, Cpu, Database, Network } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const researchAreas = [
   {
     title: "Natural Language Processing",
-    description: "Developing models for Indian languages with a focus on Hindi and regional dialects of Uttar Pradesh.",
-    icon: <BookOpen className="h-10 w-10" />,
-    progress: 85,
-  },
-  {
-    title: "Computer Vision",
-    description: "Creating vision systems for agriculture, healthcare, and cultural heritage preservation.",
-    icon: <PieChart className="h-10 w-10" />,
+    description: "Developing multilingual NLP models for Indian languages, particularly Hindi and regional dialects of UP.",
+    icon: <Brain className="h-8 w-8" />,
     progress: 75,
   },
   {
-    title: "AI for Social Good",
-    description: "Applying AI to address social challenges in education, healthcare, and rural development.",
-    icon: <BarChart className="h-10 w-10" />,
-    progress: 65,
+    title: "Computer Vision",
+    description: "Creating vision systems for agricultural monitoring, rural healthcare diagnostics, and urban planning.",
+    icon: <Cpu className="h-8 w-8" />,
+    progress: 60,
   },
   {
-    title: "Reinforcement Learning",
-    description: "Exploring applications in robotics, autonomous systems, and optimization problems.",
-    icon: <LineChart className="h-10 w-10" />,
-    progress: 60,
+    title: "AI for Social Good",
+    description: "Developing AI solutions to address social challenges in education, healthcare, and governance.",
+    icon: <Network className="h-8 w-8" />,
+    progress: 45,
+  },
+  {
+    title: "Edge AI Computing",
+    description: "Building lightweight AI models that can run on low-power devices for rural and remote applications.",
+    icon: <Database className="h-8 w-8" />,
+    progress: 30,
   },
 ]
 
@@ -47,7 +47,7 @@ export default function ResearchSection() {
           {researchAreas.map((area, index) => (
             <div
               key={index}
-              className={`opacity-0 animate-fade-in-delay-${(index + 1) * 100} flex gap-6 p-6 bg-card/70 backdrop-blur-md rounded-lg border border-white/10 hover:border-primary/50 transition-all duration-300 shadow-lg`}
+              className="flex gap-6 p-6 bg-card/70 backdrop-blur-md rounded-lg border border-white/10 hover:border-primary/50 transition-all duration-300 shadow-lg"
             >
               <div className="flex-shrink-0 p-3 bg-primary/10 rounded-lg h-fit">{area.icon}</div>
               <div>

@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --background: 220 20% 10%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
     --card: 222 20% 12%;
     --card-foreground: 210 40% 98%;
@@ -34,6 +34,11 @@
 
     --radius: 0.5rem;
   }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+  }
 }
 
 @layer base {
@@ -45,7 +50,7 @@
   }
 }
 
-/* Modern animations */
+/* Modern animations - MODIFIED to show content immediately */
 @keyframes float {
   0%,
   100% {
@@ -68,8 +73,8 @@
 
 @keyframes fadeIn {
   from {
-    opacity: 0;
-    transform: translateY(10px);
+    opacity: 0.8;
+    transform: translateY(5px);
   }
   to {
     opacity: 1;
@@ -95,7 +100,8 @@
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.5s ease-out forwards;
+  animation: fadeIn 0.3s ease-out forwards;
+  opacity: 1;
 }
 
 .animate-shimmer {
@@ -145,29 +151,28 @@
   margin: 2rem 0;
 }
 
-/* Staggered animation for lists */
+/* Staggered animation for lists - MODIFIED to show items */
 .stagger-item {
-  opacity: 0;
-  transform: translateY(10px);
+  opacity: 1;
 }
 
 .stagger-item:nth-child(1) {
-  animation: fadeIn 0.5s 0.1s forwards ease-out;
+  animation: fadeIn 0.2s 0.05s forwards ease-out;
 }
 .stagger-item:nth-child(2) {
-  animation: fadeIn 0.5s 0.2s forwards ease-out;
+  animation: fadeIn 0.2s 0.1s forwards ease-out;
 }
 .stagger-item:nth-child(3) {
-  animation: fadeIn 0.5s 0.3s forwards ease-out;
+  animation: fadeIn 0.2s 0.15s forwards ease-out;
 }
 .stagger-item:nth-child(4) {
-  animation: fadeIn 0.5s 0.4s forwards ease-out;
+  animation: fadeIn 0.2s 0.2s forwards ease-out;
 }
 .stagger-item:nth-child(5) {
-  animation: fadeIn 0.5s 0.5s forwards ease-out;
+  animation: fadeIn 0.2s 0.25s forwards ease-out;
 }
 .stagger-item:nth-child(6) {
-  animation: fadeIn 0.5s 0.6s forwards ease-out;
+  animation: fadeIn 0.2s 0.3s forwards ease-out;
 }
 
 /* Smooth scrolling */

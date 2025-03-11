@@ -52,7 +52,7 @@ export default function LabsSection() {
           {labs.map((lab, index) => (
             <div
               key={index}
-              className={`opacity-0 animate-fade-in-delay-${(index + 1) * 100} bg-card/70 backdrop-blur-md border border-white/10 rounded-lg p-6 hover:border-primary/50 transition-all duration-300 shadow-lg`}
+              className="bg-card/70 backdrop-blur-md border border-white/10 rounded-lg p-6 hover:border-primary/50 transition-all duration-300 shadow-lg"
             >
               <div className="flex justify-between items-start">
                 <div className="p-2 bg-primary/10 rounded-lg mb-3">{lab.icon}</div>

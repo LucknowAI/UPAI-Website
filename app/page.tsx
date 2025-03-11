@@ -22,6 +22,7 @@ export default function Home() {
       <Navbar />
       <main className="flex-1">
         <HeroSection />
+        <div id="next-section"></div>
         <StatsSection />
         <AboutSection />
         <div className="h-px w-full max-w-5xl mx-auto bg-gradient-to-r from-transparent via-white/10 to-transparent my-8"></div>
@@ -34,7 +35,7 @@ export default function Home() {
         <PartnersSection />
         <EventsSection />
         <NewsSection />
-        <div className="flex justify-center -z-10 flex-col sm:mt-36 mt-24">
+        <div className="flex justify-center z-10 flex-col sm:mt-36 mt-24">
             <h3 className="tracking-widest text-3xl font-semibold text-center relative z-10 text-black dark:text-white hover:underline hover:decoration-blue-500 hover:decoration-4">
             FAQs
             </h3>

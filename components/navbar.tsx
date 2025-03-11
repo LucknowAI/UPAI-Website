@@ -29,14 +29,14 @@ export default function Navbar() {
     setMobileMenuOpen(false)
     const element = document.querySelector(href)
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: "smooth", block: "start" })
     }
   }
 
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300",
+        "fixed top-0 z-50 w-full transition-all duration-300",
         scrolled ? "bg-background/80 backdrop-blur-md border-b border-white/10" : "bg-transparent",
       )}
     >

@@ -1,45 +1,35 @@
-import { Building, ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { HandshakeIcon, Building2 } from "lucide-react"
+import Image from "next/image"
 
 const partners = [
   {
-    name: "Tech Innovate",
-    logo: "/placeholder.svg?height=80&width=200&text=Tech Innovate",
-    type: "Industry",
-  },
-  {
-    name: "IIT Kanpur",
-    logo: "/placeholder.svg?height=80&width=200&text=IIT Kanpur",
-    type: "Academic",
-  },
-  {
     name: "UP Government",
-    logo: "/placeholder.svg?height=80&width=200&text=UP Government",
+    logo: "/partners/up-govt.png",
     type: "Government",
   },
   {
-    name: "Future AI",
-    logo: "/placeholder.svg?height=80&width=200&text=Future AI",
-    type: "Industry",
-  },
-  {
-    name: "AgriTech Solutions",
-    logo: "/placeholder.svg?height=80&width=200&text=AgriTech",
-    type: "Industry",
-  },
-  {
-    name: "BHU Varanasi",
-    logo: "/placeholder.svg?height=80&width=200&text=BHU",
+    name: "IIT Kanpur",
+    logo: "/partners/iit-kanpur.png",
     type: "Academic",
   },
   {
-    name: "Health AI",
-    logo: "/placeholder.svg?height=80&width=200&text=Health AI",
+    name: "Microsoft",
+    logo: "/partners/microsoft.png",
     type: "Industry",
   },
   {
-    name: "Digital India",
-    logo: "/placeholder.svg?height=80&width=200&text=Digital India",
+    name: "Google",
+    logo: "/partners/google.png",
+    type: "Industry",
+  },
+  {
+    name: "NASSCOM",
+    logo: "/partners/nasscom.png",
+    type: "Industry Association",
+  },
+  {
+    name: "UP IT Department",
+    logo: "/partners/up-it.png",
     type: "Government",
   },
 ]
@@ -50,38 +40,31 @@ export default function PartnersSection() {
       <div className="container relative">
         <div className="text-center mb-16">
           <div className="inline-block mb-4 p-2 bg-primary/10 rounded-lg">
-            <Building className="h-6 w-6 text-secondary" />
+            <Building2 className="h-6 w-6 text-secondary" />
           </div>
           <h2 className="text-3xl font-bold tracking-tight mb-4">Our Partners</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            We collaborate with leading organizations across industry, academia, and government to advance AI in Uttar
-            Pradesh.
+            We collaborate with government, industry, and academic institutions to create a thriving AI ecosystem.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
           {partners.map((partner, index) => (
-            <div key={index} className={`opacity-0 animate-fade-in-delay-${(index % 4) * 100} group`}>
-              <div className="bg-card/70 backdrop-blur-md border border-white/10 rounded-lg p-6 flex flex-col items-center justify-center h-full hover:border-primary/50 hover:shadow-lg transition-all duration-300">
-                <img
-                  src={partner.logo || "/placeholder.svg"}
-                  alt={partner.name}
-                  className="h-12 md:h-16 object-contain mb-4 opacity-80 group-hover:opacity-100 transition-opacity"
-                />
-                <h3 className="font-medium text-center">{partner.name}</h3>
-                <span className="text-xs text-muted-foreground px-2 py-1 rounded-full bg-primary/10 mt-2">
-                  {partner.type}
-                </span>
+            <div
+              key={index}
+              className="flex flex-col items-center p-6 bg-card/30 backdrop-blur-sm rounded-lg border border-white/5 hover:border-primary/30 transition-all duration-300"
+            >
+              <div className="h-16 w-16 mb-4 bg-white/5 rounded-full flex items-center justify-center">
+                {partner.logo ? (
+                  <Image src={partner.logo} alt={partner.name} width={40} height={40} />
+                ) : (
+                  <Building2 className="h-8 w-8 text-muted-foreground" />
+                )}
               </div>
+              <h3 className="text-sm font-medium text-center">{partner.name}</h3>
+              <p className="text-xs text-muted-foreground mt-1">{partner.type}</p>
             </div>
           ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <Button variant="outline" className="border-primary/50 hover:bg-primary/10 transition-colors group">
-            Become a Partner
-            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-          </Button>
         </div>
       </div>
     </section>

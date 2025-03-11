@@ -1,42 +1,52 @@
-import { Calendar, MapPin, Users, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
+import { Calendar, MapPin, Users, Clock, ChevronRight } from "lucide-react"
 
 const events = [
   {
-    title: "AI Hackathon 2023",
-    date: "March 15-17, 2023",
-    location: "Lucknow IT Park",
-    description: "A 48-hour hackathon focused on developing AI solutions for agriculture and healthcare.",
-    image: "/placeholder.svg?height=300&width=500&text=Hackathon",
-    attendees: 250,
-    link: "#",
-  },
-  {
-    title: "Machine Learning Workshop Series",
-    date: "April 5-20, 2023",
-    location: "Virtual",
-    description: "A comprehensive workshop series covering the fundamentals of machine learning and deep learning.",
-    image: "/placeholder.svg?height=300&width=500&text=Workshop",
+    title: "UP AI Summit 2024",
+    date: "January 15, 2024",
+    time: "9:00 AM - 5:00 PM",
+    location: "Indira Gandhi Pratishthan, Lucknow",
     attendees: 500,
+    description:
+      "Annual conference bringing together AI researchers, industry professionals, and policymakers from across Uttar Pradesh.",
     link: "#",
   },
   {
-    title: "AI Research Symposium",
-    date: "May 10, 2023",
+    title: "Machine Learning Workshop",
+    date: "February 10, 2024",
+    time: "10:00 AM - 2:00 PM",
     location: "IIT Kanpur",
-    description: "A symposium featuring presentations from leading AI researchers in Uttar Pradesh.",
-    image: "/placeholder.svg?height=300&width=500&text=Symposium",
-    attendees: 150,
+    attendees: 100,
+    description:
+      "Hands-on workshop on machine learning fundamentals and practical applications in Python.",
+    link: "#",
+  },
+  {
+    title: "AI for Healthcare Hackathon",
+    date: "March 5-7, 2024",
+    time: "All day",
+    location: "BHU, Varanasi",
+    attendees: 200,
+    description:
+      "48-hour hackathon focused on developing AI solutions for healthcare challenges in eastern UP.",
+    link: "#",
+  },
+  {
+    title: "Natural Language Processing Meetup",
+    date: "April 22, 2024",
+    time: "5:00 PM - 8:00 PM",
+    location: "Tech Hub, Noida",
+    attendees: 75,
+    description:
+      "Monthly meetup for NLP enthusiasts to discuss latest research and applications.",
     link: "#",
   },
 ]
 
 export default function EventsSection() {
   return (
-    <section id="events" className="py-16 md:py-24 relative bg-primary/5">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background"></div>
-
+    <section id="events" className="py-16 md:py-24 relative">
       <div className="container relative">
         <div className="text-center mb-16">
           <div className="inline-block mb-4 p-2 bg-primary/10 rounded-lg">
@@ -48,50 +58,54 @@ export default function EventsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {events.map((event, index) => (
-            <div key={index} className={`opacity-0 animate-fade-in-delay-${index * 100} group`}>
-              <div className="bg-card/70 backdrop-blur-md border border-white/10 rounded-lg overflow-hidden h-full hover:border-primary/50 hover:shadow-lg transition-all duration-300">
-                <div className="relative">
-                  <img
-                    src={event.image || "/placeholder.svg"}
-                    alt={event.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-background to-transparent opacity-60"></div>
-                  <div className="absolute bottom-4 left-4 bg-background/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm flex items-center">
-                    <Calendar className="h-4 w-4 mr-1" />
-                    {event.date}
+            <div
+              key={index}
+              className="bg-card/70 backdrop-blur-md border border-white/10 rounded-lg overflow-hidden hover:border-primary/50 transition-all duration-300 shadow-lg"
+            >
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-xl font-semibold">{event.title}</h3>
+                  <div className="text-xs font-medium px-2.5 py-1 bg-primary/20 rounded-full">
+                    Upcoming
                   </div>
                 </div>
 
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                    {event.title}
-                  </h3>
-                  <div className="flex items-center text-muted-foreground mb-2">
-                    <MapPin className="h-4 w-4 mr-1" />
-                    <span className="text-sm">{event.location}</span>
+                <div className="space-y-3 mb-4">
+                  <div className="flex items-center text-sm text-muted-foreground">
+                    <Calendar className="mr-2 h-4 w-4 text-muted-foreground" />
+                    {event.date}
                   </div>
-                  <div className="flex items-center text-muted-foreground mb-4">
-                    <Users className="h-4 w-4 mr-1" />
-                    <span className="text-sm">{event.attendees} attendees</span>
+                  <div className="flex items-center text-sm text-muted-foreground">
+                    <Clock className="mr-2 h-4 w-4 text-muted-foreground" />
+                    {event.time}
                   </div>
-                  <p className="text-muted-foreground mb-4">{event.description}</p>
-                  <Link
-                    href={event.link}
-                    className="inline-flex items-center text-secondary font-medium group-hover:underline"
-                  >
-                    Learn more <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                  <div className="flex items-center text-sm text-muted-foreground">
+                    <MapPin className="mr-2 h-4 w-4 text-muted-foreground" />
+                    {event.location}
+                  </div>
+                  <div className="flex items-center text-sm text-muted-foreground">
+                    <Users className="mr-2 h-4 w-4 text-muted-foreground" />
+                    {event.attendees} Expected Attendees
+                  </div>
                 </div>
+
+                <p className="text-sm text-muted-foreground mb-4">{event.description}</p>
+
+                <a
+                  href={event.link}
+                  className="inline-flex items-center text-sm text-secondary font-medium hover:underline"
+                >
+                  Learn more <ChevronRight className="ml-1 h-4 w-4" />
+                </a>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <Button variant="outline" className="border-primary/50 hover:bg-primary/10 transition-colors">
+        <div className="mt-10 text-center">
+          <Button variant="outline" className="border-primary/20">
             View All Events
           </Button>
         </div>
