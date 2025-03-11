@@ -15,10 +15,12 @@ import ContactSection from "@/components/sections/contact-section";
 import Footer from "@/components/footer";
 import { ScrollButton } from "@/components/ui/scroll-button";
 import FAQs from "@/components/faq";
+import StructuredData from './structured-data'
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
+      <StructuredData />
       <Navbar />
       <main className="flex-1">
         <HeroSection />
