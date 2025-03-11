@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import Navbar from "@/components/navbar";
 import HeroSection from "@/components/sections/hero-section";
@@ -16,6 +16,12 @@ import Footer from "@/components/footer";
 import { ScrollButton } from "@/components/ui/scroll-button";
 import FAQs from "@/components/faq";
 import StructuredData from './structured-data'
+import { Metadata } from "next/dist/lib/metadata/types/metadata-interface";
+
+export const metadata: Metadata = {
+  title: "AI Labs & Research Centers | UP AI Labs",
+  description: "Explore our state-of-the-art AI labs and research centers across Uttar Pradesh. Join us in advancing AI technology and innovation.",
+} 
 
 export default function Home() {
   return (
