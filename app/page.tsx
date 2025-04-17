@@ -1,5 +1,3 @@
-// "use client";
-
 import Navbar from "@/components/navbar";
 import HeroSection from "@/components/sections/hero-section";
 import AboutSection from "@/components/sections/about-section";
@@ -7,8 +5,6 @@ import Activities from "@/components/sections/activities";
 import Chapters from "@/components/sections/chapters";
 import StatsSection from "@/components/sections/stats-section";
 import PartnersSection from "@/components/sections/partners-section";
-import EventsSection from "@/components/sections/events-section";
-import NewsSection from "@/components/sections/news-section";
 import ContactSection from "@/components/sections/contact-section";
 import Footer from "@/components/footer";
 import { ScrollButton } from "@/components/ui/scroll-button";
