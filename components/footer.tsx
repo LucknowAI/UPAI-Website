@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { Zap, Github, Twitter, Linkedin, Mail, MapPin } from "lucide-react"
+import { Zap, Github, Linkedin, Youtube, MapPin } from "lucide-react"
+import { RiTwitterXLine, RiDiscordLine } from 'react-icons/ri';
 
 export default function Footer() {
   return (
@@ -15,21 +16,24 @@ export default function Footer() {
               Building the future of AI innovation and talent in Uttar Pradesh.
             </p>
             <div className="flex gap-4">
-              <Link href="#" className="text-muted-foreground hover:text-secondary transition-colors">
-                <Github size={20} />
+              <Link href="https://github.com/LucknowAI" className="text-muted-foreground hover:text-secondary transition-colors" target="_blank"
+              rel="noopener noreferrer">
+                <Github size={30} />
                 <span className="sr-only">GitHub</span>
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-secondary transition-colors">
-                <Twitter size={20} />
-                <span className="sr-only">Twitter</span>
+              <Link href="https://x.com/AILucknow" className="text-muted-foreground hover:text-secondary transition-colors" target="_blank"
+              rel="noopener noreferrer">
+                <RiTwitterXLine size={30} />
+                <span className="sr-only">X</span>
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-secondary transition-colors">
-                <Linkedin size={20} />
+              <Link href="https://www.linkedin.com/company/lucknow-ai-labs/" className="text-muted-foreground hover:text-secondary transition-colors" target="_blank"
+              rel="noopener noreferrer">
+                <Linkedin size={30} />
                 <span className="sr-only">LinkedIn</span>
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-secondary transition-colors">
-                <Mail size={20} />
-                <span className="sr-only">Email</span>
+              </Link><Link href="https://discord.com/invite/QKw67PDZUm" className="text-muted-foreground hover:text-secondary transition-colors" target="_blank"
+              rel="noopener noreferrer">
+                <RiDiscordLine size={30} />
+                <span className="sr-only">Discord</span>
               </Link>
             </div>
           </div>
@@ -130,15 +134,15 @@ export default function Footer() {
             © {new Date().getFullYear()} Uttar Pradesh AI Labs. All rights reserved.
           </p>
           <div className="flex gap-4 mt-4 md:mt-0">
-            <Link href="#" className="text-sm text-muted-foreground hover:text-secondary transition-colors">
+            <span className="text-sm text-muted-foreground hover:text-secondary transition-colors">
               Privacy Policy
-            </Link>
-            <Link href="#" className="text-sm text-muted-foreground hover:text-secondary transition-colors">
+            </span>
+            <span className="text-sm text-muted-foreground hover:text-secondary transition-colors">
               Terms of Service
-            </Link>
-            <Link href="#" className="text-sm text-muted-foreground hover:text-secondary transition-colors">
+            </span>
+            <span className="text-sm text-muted-foreground hover:text-secondary transition-colors">
               Cookie Policy
-            </Link>
+            </span>
           </div>
         </div>
       </div>

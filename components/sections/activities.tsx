@@ -47,7 +47,7 @@ export default function Activities() {
           
           <div className="flex justify-center mb-6">
             <div className="px-6 py-2 bg-[#111] border border-white/10 rounded-full shadow-lg">
-              <p className="text-xl font-medium text-white">Activities</p>
+              <p className="text-xl font-medium text-white"><span className="mr-2">•</span>Activities</p>
             </div>
           </div>
 

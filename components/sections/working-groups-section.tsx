@@ -5,17 +5,17 @@ const workingGroups = [
   {
     title: "Individual",
     icon: <User className="h-12 w-12 text-white" />,
-    link: "#join-individual"
+    link: "https://airtable.com/appVtU1kNmtrMl3dq/pagWDJfY7nqpFwvsl/form"
   },
   {
     title: "Industry",
     icon: <Building className="h-12 w-12 text-white" />,
-    link: "#join-industry"
+    link: "https://airtable.com/appVtU1kNmtrMl3dq/pagQjOdvTi8YUSm19/form"
   },
   {
     title: "Academia",
     icon: <GraduationCap className="h-12 w-12 text-white" />,
-    link: "#join-academia"
+    link: "https://airtable.com/appVtU1kNmtrMl3dq/pagNcRDO7yraRF73O/form"
   }
 ];
 
@@ -57,6 +57,8 @@ export default function WorkingGroupsSection() {
               <Link 
                 href={group.link}
                 className="bg-white text-black hover:bg-gray-200 transition-colors py-2 px-6 rounded-full w-full text-center font-medium"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Join
               </Link>

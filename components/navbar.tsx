@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X, Zap } from "lucide-react"
 import { cn } from "@/lib/utils"
+import Link from "next/link"
 
 const navItems = [
   { name: "About", href: "#about" },
@@ -61,9 +62,14 @@ export default function Navbar() {
               {item.name}
             </a>
           ))}
-          <Button variant="default" size="sm">
-            Join Community
-          </Button>
+          <Link  href="https://chat.whatsapp.com/IAM2fp4IoLiGbuI6ZeNfzH" 
+                target="_blank"
+                rel="noopener noreferrer">
+                <Button variant="default" size="sm">
+                  Join Community
+                </Button>
+          </Link>
+          
         </nav>
 
         {/* Mobile Menu Button */}
@@ -96,9 +102,16 @@ export default function Navbar() {
               </a>
             ))}
             <div className="pt-4">
-              <Button variant="default" size="sm" className="w-full">
-                Join Community
-              </Button>
+              <Link
+                href="https://chat.whatsapp.com/IAM2fp4IoLiGbuI6ZeNfzH" 
+                target="_blank"
+                rel="noopener noreferrer">
+                <Button variant="default" size="sm" className="w-full">
+                  Join Community
+                </Button>
+              
+              </Link>
+              
             </div>
           </nav>
         </div>

@@ -4,27 +4,21 @@ import Link from "next/link";
 
 const resources = [
   {
-    title: "Machine Learning Bootcamp",
-    image: "/1.png",
-    link: "#",
-    type: "Course"
+    title: "Youtube",
+    image: "/yt.PNG",
+    link: "https://www.youtube.com/@lucknowailabs/videos",
+    type: "Videos"
   },
   {
-    title: "So You Want To Learn Machine Learning",
-    image: "/1.png",
-    link: "#",
-    date: "March 31, 2020"
-  },
-  {
-    title: "KGX Roadmaps",
-    image: "/1.png",
-    link: "#",
+    title: "AI Career Toolkit",
+    image: "/AICareerToolkit.png",
+    link: "https://github.com/LucknowAI/AI-Career-Toolkit",
     type: "Guide"
   },
   {
     title: "AI All Resources",
-    image: "/1.png",
-    link: "#",
+    image: "/AIAllRes.png",
+    link: "https://github.com/LucknowAI/ai_all_resources",
     type: "Collection"
   }
 ];
@@ -51,15 +45,17 @@ export default function ResourcesSection() {
         </div>
 
         {/* Resources Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {resources.map((resource, index) => (
             <Link 
               href={resource.link} 
               key={index}
               className="group"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <div className="bg-gray-800 rounded-xl overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]">
-                <div className="relative h-48">
+                <div className="relative h-52">
                   <Image
                     src={resource.image || "/1.png"}
                     alt={resource.title}
