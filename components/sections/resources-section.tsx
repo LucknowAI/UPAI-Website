@@ -1,8 +1,15 @@
-import { BookOpen, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const resources = [
+interface Resource {
+  title: string;
+  image: string;
+  link: string;
+  date?: string;
+  type: string;
+}
+
+const resources: Resource[] = [
   {
     title: "Youtube",
     image: "/yt.PNG",
