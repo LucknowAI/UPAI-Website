@@ -57,11 +57,11 @@ export default function Activities() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 bg-color-[#383942]">
           {activities.map((activity, index) => (
             <div
               key={index}
-              className="bg-[#0a0a0a] border border-white/5 rounded-lg p-6 hover:border-primary/30 transition-all duration-300 shadow-lg h-full flex flex-col"
+              className="bg-[#0a0a0a] border rounded-lg border-primary/20 p-6 hover:border-primary/30 transition-all duration-300 shadow-lg h-full flex flex-col"
             >
               <div className="mb-4">
                 <div className="p-2 rounded-lg mb-3">
