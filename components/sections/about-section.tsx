@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutSection() {
   return (
@@ -10,7 +11,7 @@ export default function AboutSection() {
         {/* About AI Button - Centered */}
         <div className="flex justify-center mb-8">
           <div className="px-6 py-2 bg-[#111] border border-white/10 rounded-full shadow-lg">
-            <p className="text-xl font-medium text-white">About AI उत्तरप्रदेश</p>
+            <p className="text-xl font-medium text-white"><span className="mr-2">•</span>About AI उत्तरप्रदेश</p>
           </div>
         </div>
 
@@ -63,7 +64,7 @@ export default function AboutSection() {
               {/* First image */}
               <div className="rounded-xl overflow-hidden h-40">
                 <Image 
-                  src="/1.png" 
+                  src="/event.jpg" 
                   alt="AI UP Community Meetup" 
                   width={200} 
                   height={160}
@@ -73,16 +74,22 @@ export default function AboutSection() {
               
               {/* Video placeholder */}
               <div className="rounded-xl overflow-hidden bg-gray-800 flex items-center justify-center h-40">
-                <button className="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center">
-                  <Play className="h-6 w-6 text-white" />
-                </button>
+              <Link 
+                  href="https://www.youtube.com/@lucknowailabs/videos" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <button className="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center hover:bg-gray-600 transition-colors">
+                    <Play className="h-6 w-6 text-white" />
+                  </button>
+                </Link>
               </div>
             </div>
             
             {/* Team image */}
             <div className="relative rounded-xl overflow-hidden h-48">
               <Image 
-                src="/1.png" 
+                src="/team.jpg" 
                 alt="AI UP Team" 
                 width={400} 
                 height={192}
