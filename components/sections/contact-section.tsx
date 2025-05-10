@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ArrowRight, Mail, MapPin, Phone, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function ContactSection() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -95,11 +96,14 @@ export default function ContactSection() {
                 </div>
               </div>
             </div>
-
+            <Link href="https://chat.whatsapp.com/IAM2fp4IoLiGbuI6ZeNfzH" 
+                target="_blank"
+                rel="noopener noreferrer" >
             <Button size="lg" variant="secondary" className="gap-2 group">
               Become a Member
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
+            </Link>
           </div>
 
           {/* Right Form Column */}
