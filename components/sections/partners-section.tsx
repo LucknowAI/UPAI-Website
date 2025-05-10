@@ -12,7 +12,6 @@ const partners = [
 		logo: "/gdglucknow.png",
 		type: "Academic",
 	},
-	// Add more partners as needed
 ]
 
 export default function PartnersSection() {
@@ -41,7 +40,6 @@ export default function PartnersSection() {
 							>
 								{partner.logo ? (
 									<>
-										{/* Original colored image with overlay */}
 										<div className="relative flex items-center justify-center w-full h-full">
 											<Image
 												src={partner.logo}
@@ -50,11 +48,9 @@ export default function PartnersSection() {
 												height={80}
 												className="object-contain max-h-28 max-w-full z-10"
 											/>
-											{/* Gray overlay - transitions to transparent on hover */}
+									
 											<div className="absolute inset-0 bg-black opacity-70 group-hover:opacity-0 transition-opacity duration-300 z-20"></div>
 										</div>
-
-										{/* White version on hover */}
 										<div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center w-full h-full z-30">
 											<Image
 												src={partner.logo}

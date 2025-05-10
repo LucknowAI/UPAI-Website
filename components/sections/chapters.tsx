@@ -42,7 +42,7 @@ export default function Chapters() {
           </div>
 
           {/* Flip images */}
-          <div className="relative lg:pl-4 h-96">
+          <div className="relative lg:pl-2 h-96">
             {/* Top Image */}
             <div
               onClick={toggleFlip}
