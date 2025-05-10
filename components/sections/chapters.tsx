@@ -52,7 +52,7 @@ export default function Chapters() {
               style={{ boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)" }}
             >
               <Image
-                src="/33.jpg"
+                src="/33.JPG"
                 alt="AI Chapter Event"
                 width={600}
                 height={400}

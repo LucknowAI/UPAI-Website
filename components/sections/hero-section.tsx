@@ -1,6 +1,9 @@
+"use client";
+
 import { ArrowRight } from "lucide-react"
 import React from "react"
 import Link from "next/link";
+import Tilt from 'react-parallax-tilt'
 
 export default function UttarPradeshAILabs() {
   
@@ -22,7 +25,14 @@ export default function UttarPradeshAILabs() {
         {/* Main content */}
         <div className="flex flex-col md:flex-row min-h-screen">
         {/* Left section */}
-        <div className="flex-1 flex flex-col justify-center px-8 md:px-16 py-16 mt-12">
+        <div className="flex-1 flex flex-col px-8 md:px-16 py-16 mt-12">
+          <div className="flex  mb-6">
+          <div className="px-5 py-1.5 bg-[#111] border border-white/10 rounded-full shadow-lg">
+            <p className="text-xl font-medium text-white flex items-center">
+              <span className="mr-2">•</span> नमस्ते, एआई उत्तर प्रदेश
+            </p>
+          </div>
+        </div>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white/90">
             Uttar Pradesh<br />AI Labs
           </h1>
@@ -52,6 +62,7 @@ export default function UttarPradeshAILabs() {
           {/* Right Section: Honeycomb collage grid */}
         
         <div className="flex-1 flex items-center justify-center relative">
+          <Tilt>
           <div className="relative" style={{ width: 450, height: 450 }}>
             {images.map((img, idx) => (
               <div
@@ -73,6 +84,7 @@ export default function UttarPradeshAILabs() {
               </div>
             ))}
           </div>
+          </Tilt>
         </div>
       </div>
     </div>

@@ -43,7 +43,7 @@ export default function StatsSection() {
             <p className="text-muted-foreground">AI Projects</p>
           </div>
           <div className="space-y-2">
-            <h3 className="text-4xl font-bold text-primary">1000+</h3>
+            <h3 className="text-4xl font-bold text-primary">3000+</h3>
             <p className="text-muted-foreground">Community Members</p>
           </div>
           <div className="space-y-2">
