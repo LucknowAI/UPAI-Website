@@ -2,7 +2,16 @@ import { BookOpen, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const resources = [
+// Define the resource type
+interface Resource {
+  title: string;
+  image: string;
+  link: string;
+  type: string;
+  date?: string; // Make date optional
+}
+
+const resources: Resource[] = [
   {
     title: "Youtube",
     image: "/yt.PNG",
@@ -65,12 +74,7 @@ export default function ResourcesSection() {
                 </div>
                 <div className="p-4">
                   <h3 className="text-white font-medium text-lg mb-1">{resource.title}</h3>
-                  {resource.date && (
-                    <p className="text-gray-400 text-sm">{resource.date}</p>
-                  )}
-                  {resource.type && (
-                    <p className="text-gray-400 text-sm">{resource.type}</p>
-                  )}
+                  <p className="text-gray-400 text-sm">{resource.type}</p>
                 </div>
               </div>
             </Link>
