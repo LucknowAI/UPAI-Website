@@ -15,8 +15,8 @@ export default function Chapters() {
   const toggleFlip = () => setIsFlipped(!isFlipped);
 
   return (
-    <section id="chapters" className="py-16 md:py-24 bg-black relative">
-      <div className="container mx-auto max-w-5xl px-4 relative">
+    <section id="chapters" className="p-16 md:py-24 bg-black relative">
+      <div className="container mx-auto max-w-4xl px-4 relative">
         {/* Header */}
         <div className="flex justify-center mb-10">
           <div className="px-6 py-2 bg-[#111] border border-white/10 rounded-full shadow-lg">
@@ -42,7 +42,13 @@ export default function Chapters() {
           </div>
 
           {/* Flip images */}
-          <div className="relative lg:pl-2 h-96">
+
+
+          <div className="relative lg:pl-3 h-96">
+
+     
+
+
             {/* Top Image */}
             <div
               onClick={toggleFlip}

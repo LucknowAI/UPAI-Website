@@ -20,7 +20,8 @@ export default function UttarPradeshAILabs() {
   const hexSize = 165;
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-hidden">
+    <section id="hero" className="py-6 relative">
+    <div className="container mx-auto bg-black text-white overflow-hidden relative">
       
         {/* Main content */}
         <div className="flex flex-col md:flex-row min-h-screen">
@@ -88,5 +89,6 @@ export default function UttarPradeshAILabs() {
         </div>
       </div>
     </div>
+    </section>
   )
 }
