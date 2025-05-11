@@ -71,11 +71,11 @@ export default function Activities() {
         </div>
 
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 bg-color-[#383942]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
           {activities.map((activity, index) => (
             <div
               key={index}
-              className="bg-[#0a0a0a] border rounded-lg border-primary/20 p-6 hover:border-primary/30 transition-all duration-300 shadow-lg h-full flex flex-col"
+              className="border rounded-lg border-gray-700 p-10 transition-all duration-300 shadow-lg h-full flex flex-col"
             >
               {/* icon + title on one line */}
               <div className="flex items-center mb-4 space-x-3">
