@@ -1,14 +1,12 @@
-import { BookOpen, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-// Define the resource type
 interface Resource {
   title: string;
   image: string;
   link: string;
+  date?: string;
   type: string;
-  date?: string; // Make date optional
 }
 
 const resources: Resource[] = [
