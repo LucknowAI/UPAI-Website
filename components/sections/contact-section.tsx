@@ -93,7 +93,6 @@ export default function ContactSection() {
                 <div>
                   <h3 className="font-medium">Phone</h3>
                   <p className="text-muted-foreground">+91 9336247359</p>
-                  <p className="text-muted-foreground">+91 9455247504</p>
                 </div>
               </div>
             </div>
