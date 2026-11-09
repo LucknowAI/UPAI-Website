@@ -1,4 +1,29 @@
 import { NextResponse } from 'next/server';
+import sanitizeHtml from 'sanitize-html';
+
+const isMediumUrl = (u: URL) =>
+  u.protocol === 'https:' && (u.hostname === 'medium.com' || u.hostname.endsWith('.medium.com'));
+
+// Strips scripts, event handlers and non-http(s) URLs from third-party HTML.
+const clean = (html: string) =>
+  sanitizeHtml(html, {
+    allowedTags: [...sanitizeHtml.defaults.allowedTags, 'img', 'figure', 'figcaption', 'h1', 'h2', 'span'],
+    allowedAttributes: { a: ['href'], img: ['src', 'alt'] },
+    allowedSchemes: ['http', 'https'],
+    allowProtocolRelative: false,
+  });
+
+// Follows redirects by hand so every hop stays on medium.com.
+async function fetchMedium(url: URL, init: RequestInit) {
+  for (let hops = 0; hops < 4; hops++) {
+    const res = await fetch(url, { ...init, redirect: 'manual' });
+    const location = res.headers.get('location');
+    if (res.status < 300 || res.status >= 400 || !location) return res;
+    url = new URL(location, url);
+    if (!isMediumUrl(url)) throw new Error('Redirected off medium.com');
+  }
+  throw new Error('Too many redirects');
+}
 
 export async function POST(request: Request) {
   try {
@@ -9,7 +34,15 @@ export async function POST(request: Request) {
     }
 
     // Try to extract author from URL to fetch their clean RSS feed
-    const urlObj = new URL(url);
+    let urlObj: URL;
+    try {
+      urlObj = new URL(url);
+    } catch {
+      return NextResponse.json({ error: 'Invalid URL' }, { status: 400 });
+    }
+    if (!isMediumUrl(urlObj)) {
+      return NextResponse.json({ error: 'Only medium.com URLs are supported' }, { status: 400 });
+    }
     const authorMatch = urlObj.pathname.match(/\/@([\w_]+)\/?/);
     
     if (authorMatch && authorMatch[1]) {
@@ -43,18 +76,14 @@ export async function POST(request: Request) {
               return `<pre><code>${codeText}</code></pre>`;
             });
 
-            // Clean up potentially harmful tags
-            cleanContent = cleanContent.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
-            cleanContent = cleanContent.replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '');
-            
-            return NextResponse.json({ content: cleanContent });
+            return NextResponse.json({ content: clean(cleanContent) });
           }
         }
       }
     }
 
     // Fallback: If RSS fails or article not in recent feed, scrape Medium directly
-    const response = await fetch(url, {
+    const response = await fetchMedium(urlObj, {
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
@@ -85,11 +114,7 @@ export async function POST(request: Request) {
       }
     }
 
-    // Secondary cleanup just in case
-    articleContent = articleContent.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
-    articleContent = articleContent.replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '');
-
-    return NextResponse.json({ content: articleContent });
+    return NextResponse.json({ content: clean(articleContent) });
 
   } catch (error: any) {
     console.error('Error fetching blog:', error);
