@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowRight, Mail, MapPin, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -39,6 +39,14 @@ const inputClass =
 export default function ContactSection() {
   const [form, setForm] = useState<FormState>(EMPTY_FORM);
   const [status, setStatus] = useState<Status>({ kind: "idle" });
+
+  // Links such as /contact_us?topic=partnership pre-select the topic.
+  useEffect(() => {
+    const topic = new URLSearchParams(window.location.search).get("topic");
+    if (topic && topic in CONTACT_CATEGORIES) {
+      setForm((prev) => ({ ...prev, category: topic as ContactCategory }));
+    }
+  }, []);
 
   function onChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>

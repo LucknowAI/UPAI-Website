@@ -8,7 +8,8 @@ import Link from "next/link"
 
 const navItems = [
   { name: "About", href: "/about" },
-  //{ name: "Labs", href: "/labs" },
+  { name: "Events", href: "/events" },
+  { name: "Chapters", href: "/labs" },
   { name: "Research", href: "/research" },
   { name: "Projects", href: "/projects" },
   { name: "Blogs", href: "/blogs" },
@@ -37,7 +38,7 @@ export default function Navbar() {
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Zap className="h-6 w-6 text-primary animate-pulse-slow" />
-          <span className="text-xl font-bold">UP AI Labs</span>
+          <span className="text-xl font-bold">UPAI Labs</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -51,11 +52,9 @@ export default function Navbar() {
               {item.name}
             </Link>
           ))}
-          <Link href="/contact_us">
-            <Button variant="default" size="sm">
-              Contact Us
-            </Button>
-          </Link>
+          <Button asChild variant="default" size="sm">
+            <Link href="/contact_us">Contact Us</Link>
+          </Button>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -85,14 +84,11 @@ export default function Navbar() {
               </Link>
             ))}
             <div className="pt-4">
-              <Link
-                href="/contact_us"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <Button variant="default" size="sm" className="w-full">
+              <Button asChild variant="default" size="sm" className="w-full">
+                <Link href="/contact_us" onClick={() => setMobileMenuOpen(false)}>
                   Contact Us
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
           </nav>
         </div>

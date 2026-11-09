@@ -13,7 +13,7 @@ type Props = {
     idx: number
 }
 export default function Home() {
-  const [active, setActive] = useState([false, false, false, false, false]);
+  const [active, setActive] = useState<boolean[]>(() => Array(data.length + 1).fill(false));
   return (
       <div className='grid place-items-center w-full'>
       {data.map((que)=>{

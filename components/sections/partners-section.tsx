@@ -1,43 +1,7 @@
 import { Building2 } from "lucide-react"
 import Image from "next/image"
+import { partners } from "@/content/partners"
 
-const partners = [
-	{
-		name: "AI Community Lucknow",
-		logo: "/ai-community-lucknow.png",
-		type: "Community",
-	},
-	{
-		name: "GDG Lucknow",
-		logo: "/gdglucknow.png",
-		type: "Academic",
-	},
-	{
-		name: "CIC",
-		logo: "/cic.png",
-		type: "Partner",
-	},
-	{
-		name: "C2Air",
-		logo: "/c2air.png",
-		type: "Partner",
-	},
-	{
-		name: "Tikaj",
-		logo: "/tikaj.png",
-		type: "Partner",
-	},
-	{
-		name: "Umaga",
-		logo: "/umaga.png",
-		type: "Partner",
-	},
-	{
-		name: "HuntoAI",
-		logo: "/huntoai.png",
-		type: "Partner",
-	},
-]
 
 export default function PartnersSection() {
 	return (
@@ -48,11 +12,10 @@ export default function PartnersSection() {
 						<Building2 className="h-6 w-6 text-secondary" />
 					</div>
 					<h2 className="text-3xl font-bold tracking-tight mb-4">
-						Collaborations
+						Partners
 					</h2>
 					<p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-						We collaborate with government, industry, and academic institutions to
-						create a thriving AI ecosystem.
+						Communities, colleges and companies we have run events with.
 					</p>
 				</div>
 
@@ -61,7 +24,7 @@ export default function PartnersSection() {
 						{partners.map((partner, index) => (
 							<div
 								key={index}
-								className={`group relative flex items-center justify-center h-32 w-full ${partner.name === "HuntoAI" ? "col-span-2 md:col-span-1 md:col-start-2" : ""}`}
+								className={`group relative flex items-center justify-center h-32 w-full ${index === partners.length - 1 && partners.length % 3 === 1 ? "col-span-2 md:col-span-1 md:col-start-2" : ""}`}
 							>
 								{partner.logo ? (
 									<>
@@ -76,10 +39,10 @@ export default function PartnersSection() {
 									
 											<div className="absolute inset-0 bg-black opacity-70 group-hover:opacity-0 transition-opacity duration-300 z-20"></div>
 										</div>
-										<div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center w-full h-full z-30">
+										<div aria-hidden="true" className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center w-full h-full z-30">
 											<Image
 												src={partner.logo}
-												alt={partner.name}
+												alt=""
 												width={160}
 												height={80}
 												className="object-contain max-h-28 max-w-full brightness-0 invert"

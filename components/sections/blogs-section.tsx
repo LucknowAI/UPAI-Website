@@ -104,7 +104,7 @@ export default function BlogsSection() {
             <span className="text-gray-500">Insights</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Read up on our latest technical tutorials, philosophical reflections, deep-learning research, and community explorations written by our team.
+            Technical tutorials, research notes and reflections from our team. The posts here are by Aaditya (Ankit Kumar Pal), one of our founders, and are published on Medium.
           </p>
         </div>
 

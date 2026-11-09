@@ -4,8 +4,10 @@ import BlogsSection from "@/components/sections/blogs-section";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blogs | UP AI Labs",
-  description: "Read our latest blogs and updates.",
+  title: "Blog | UPAI Labs",
+  description:
+    "Articles on AI written by members of the UPAI Labs team.",
+  alternates: { canonical: "/blogs" },
 }
 
 export default function BlogsPage() {

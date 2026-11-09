@@ -8,40 +8,40 @@ import React from "react";
 
 const activities = [
   {
-    title: "Education and Knowledge Sharing",
+    title: "Meetups, workshops and study jams",
     description:
-      "Facilitating AI education programs in Tier 3 cities and villages across Uttar Pradesh, making AI accessible to all.",
+      "Hands-on sessions on AI tools and techniques, run with colleges and communities across Lucknow.",
     icon: <MdCastForEducation className="h-10 w-10 text-gray-500" />,
   },
   {
-    title: "Promoting AI & ML Research",
+    title: "Hackathons",
     description:
-      "Pioneering AI research to explore new horizons and push the boundaries of the field in Uttar Pradesh.",
-    icon: <BsMotherboard className="h-10 w-10 text-gray-500" />,
-  },
-  {
-    title: "Active Engagement in Open Source",
-    description:
-      "Actively contributing to the open-source AI community, fostering innovation and accessibility.",
-    icon: <LuLayoutGrid className="h-10 w-10 text-gray-500" />,
-  },
-  {
-    title: "Supporting Startup Ventures",
-    description:
-      "Nurturing AI-driven startups by providing vital support, mentorship, and resources.",
+      "From 24-hour online sprints to Hack-e-Awadh, which received about 120 submissions in 2026.",
     icon: <BsRobot className="h-10 w-10 text-gray-500" />,
   },
   {
-    title: "Solving Local Challenges with AI",
+    title: "Paper reading and research",
     description:
-      "With the power of AI innovation, we strive to make impactful solutions for our local challenges.",
-    icon: <BsFileEarmarkText className="h-10 w-10 text-gray-500" />,
+      "Regular sessions on recent machine learning papers, and our own research, working towards a first publication.",
+    icon: <BsMotherboard className="h-10 w-10 text-gray-500" />,
   },
   {
-    title: "हिंदी NLP and Data Advancement",
+    title: "Open source",
     description:
-      "Advancing Hindi Natural Language Processing and data-driven initiatives to empower the Hindi language.",
+      "Community-built projects such as NAWAB AI, Loki LLM and Lucknow Tech Events, open for anyone to contribute.",
+    icon: <LuLayoutGrid className="h-10 w-10 text-gray-500" />,
+  },
+  {
+    title: "Indian languages",
+    description:
+      "Data and tools for low-resource languages, starting with Awadhi and its 38 million speakers.",
     icon: <BsGraphUp className="h-10 w-10 text-gray-500" />,
+  },
+  {
+    title: "Mentorship",
+    description:
+      "Students and early-career engineers learn alongside experienced practitioners on real projects.",
+    icon: <BsFileEarmarkText className="h-10 w-10 text-gray-500" />,
   },
 ];
 
@@ -53,7 +53,7 @@ export default function Activities() {
       <div className="container relative z-10">
         <div className="text-center mb-16">
           <div className="inline-block mb-4 p-2 bg-primary/10 rounded-lg">
-            <Cpu className="h-6 w-6 text-secondary" />
+            <Cpu className="h-10 w-10 text-gray-500" />
           </div>
 
           <div className="flex justify-center mb-6">
@@ -65,8 +65,7 @@ export default function Activities() {
           </div>
 
           <h2 className="text-4xl text-muted-foreground max-w-3xl mx-auto">
-            Empower the idea of AI and knowledge sharing throughout Uttar
-            Pradesh.
+            What we do
           </h2>
         </div>
 

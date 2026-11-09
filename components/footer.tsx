@@ -10,10 +10,10 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Zap className="h-6 w-6 text-secondary animate-pulse-slow" />
-              <span className="text-xl font-bold">UP AI Labs</span>
+              <span className="text-xl font-bold">UPAI Labs</span>
             </div>
             <p className="text-muted-foreground mb-4">
-              Building the future of AI innovation and talent in Uttar Pradesh.
+              Building AI talent, open source and research in Uttar Pradesh, starting with Lucknow.
             </p>
             <div className="flex gap-4">
               <Link href="https://github.com/LucknowAI" className="text-muted-foreground hover:text-secondary transition-colors" target="_blank"
@@ -47,8 +47,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/events" className="text-muted-foreground hover:text-secondary transition-colors">
+                  Events
+                </Link>
+              </li>
+              <li>
                 <Link href="/labs" className="text-muted-foreground hover:text-secondary transition-colors">
-                  Labs
+                  Chapters
                 </Link>
               </li>
               <li>
@@ -74,27 +79,27 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="https://medium.com/@aadityaura_26777" className="text-muted-foreground hover:text-secondary transition-colors" target="_blank" rel="noopener noreferrer">
-                  Blog
+                  Blog (Medium)
                 </Link>
               </li>
               <li>
-                <Link href="/research" className="text-muted-foreground hover:text-secondary transition-colors">
-                  Research Papers
+                <Link href="https://lucknowai.github.io/resources/" className="text-muted-foreground hover:text-secondary transition-colors" target="_blank" rel="noopener noreferrer">
+                  Learning resources
                 </Link>
               </li>
               <li>
                 <Link href="https://www.youtube.com/@lucknowailabs/videos" className="text-muted-foreground hover:text-secondary transition-colors" target="_blank" rel="noopener noreferrer">
-                  Tutorials
+                  Talks on YouTube
                 </Link>
               </li>
               <li>
-                <Link href="/projects" className="text-muted-foreground hover:text-secondary transition-colors">
-                  Open Source Projects
+                <Link href="https://github.com/LucknowAI" className="text-muted-foreground hover:text-secondary transition-colors" target="_blank" rel="noopener noreferrer">
+                  Open source on GitHub
                 </Link>
               </li>
               <li>
-                <Link href="/contact_us" className="text-muted-foreground hover:text-secondary transition-colors">
-                  Community Guidelines
+                <Link href="https://lucknowai.github.io/code-of-conduct/" className="text-muted-foreground hover:text-secondary transition-colors" target="_blank" rel="noopener noreferrer">
+                  Code of conduct
                 </Link>
               </li>
             </ul>
@@ -136,18 +141,12 @@ export default function Footer() {
 
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Uttar Pradesh AI Labs. All rights reserved.
+            © 2025-{new Date().getFullYear()} UPAI Labs Foundation, a Section 8 not-for-profit company, Lucknow.
           </p>
           <div className="flex gap-4 mt-4 md:mt-0">
-            <span className="text-sm text-muted-foreground hover:text-secondary transition-colors">
-              Privacy Policy
-            </span>
-            <span className="text-sm text-muted-foreground hover:text-secondary transition-colors">
-              Terms of Service
-            </span>
-            <span className="text-sm text-muted-foreground hover:text-secondary transition-colors">
-              Cookie Policy
-            </span>
+            <Link href="/privacy" className="text-sm text-muted-foreground hover:text-secondary transition-colors">
+              Privacy
+            </Link>
           </div>
         </div>
       </div>

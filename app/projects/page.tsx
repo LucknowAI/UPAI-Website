@@ -4,8 +4,10 @@ import Footer from "@/components/footer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Projects | UP AI Labs",
-  description: "View our ongoing AI projects.",
+  title: "Projects | UPAI Labs",
+  description:
+    "Open-source projects built by the UPAI Labs and Lucknow AI Labs community, including NAWAB AI, Loki LLM and the Awadhi language project.",
+  alternates: { canonical: "/projects" },
 }
 
 export default function ProjectsPage() {
