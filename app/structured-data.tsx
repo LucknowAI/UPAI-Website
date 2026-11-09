@@ -20,7 +20,7 @@ export default function StructuredData() {
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "general",
-      email: "contact@upai.org"
+      email: "hello@upailabs.org"
     },
     keywords: "AI, Artificial Intelligence, Machine Learning, Deep Learning, UP AI, Uttar Pradesh Technology, AI Research, AI Education",
     areaServed: {
