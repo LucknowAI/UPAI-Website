@@ -26,7 +26,10 @@ export const runtime = "nodejs";
 
 const PER_IP_LIMIT = { windowMs: 10 * 60 * 1000, max: 5 }; // 5 messages per 10 minutes per IP
 const OVERALL_LIMIT = { windowMs: 60 * 60 * 1000, max: 60 }; // safety net for the whole site
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+// Plain addresses only (no quotes, comments, angle brackets or semicolons).
+// Real visitors never need those, and they are what mail-address parsers
+// (including nodemailer's) have had bugs with.
+const EMAIL_RE = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$/;
 
 // One SMTP transport per server process, created on first use.
 let transporter: Transporter | null = null;
