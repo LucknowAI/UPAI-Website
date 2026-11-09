@@ -4,30 +4,33 @@ import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
+const DESCRIPTION =
+  "UPAI Labs Foundation is a Section 8 not-for-profit building AI talent, open source and research in Uttar Pradesh, starting with Lucknow AI Labs.";
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://upai.org'),
-  title: "UP AI Labs | Uttar Pradesh Artificial Intelligence Initiative",
-  description: "Uttar Pradesh AI Labs - Leading AI innovation, research, and education in UP. Join our community of AI researchers, developers, and industry experts.",
-  keywords: "UP AI, Uttar Pradesh AI, Artificial Intelligence UP, AI Labs Uttar Pradesh, Machine Learning UP, AI Research India, UP Tech Innovation, AI Education UP",
-  authors: [{ name: "UP AI Labs" }],
+  metadataBase: new URL("https://upailabs.org"),
+  title: "UPAI Labs | Uttar Pradesh AI Labs Foundation",
+  description: DESCRIPTION,
+  applicationName: "UPAI Labs",
+  authors: [{ name: "UPAI Labs Foundation" }],
   openGraph: {
-    title: "UP AI Labs | Uttar Pradesh Artificial Intelligence Initiative",
-    description: "Leading AI innovation, research, and education in Uttar Pradesh. Join our community of AI researchers, developers, and industry experts.",
-    url: "https://upai.org",
-    siteName: "UP AI Labs",
-    locale: "en_US",
+    title: "UPAI Labs | Uttar Pradesh AI Labs Foundation",
+    description: DESCRIPTION,
+    url: "https://upailabs.org",
+    siteName: "UPAI Labs",
+    locale: "en_IN",
     type: "website",
+    images: [{ url: "/team.jpg", width: 1600, height: 823, alt: "The UPAI Labs team" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "UP AI Labs | Uttar Pradesh Artificial Intelligence Initiative",
-    description: "Leading AI innovation, research, and education in Uttar Pradesh. Join our community of AI researchers, developers, and industry experts.",
-  },
-  verification: {
-    google: "your-google-verification-code",
+    site: "@AILucknow",
+    title: "UPAI Labs | Uttar Pradesh AI Labs Foundation",
+    description: DESCRIPTION,
+    images: ["/team.jpg"],
   },
   alternates: {
-    canonical: "https://upai.org",
+    canonical: "/",
   },
 }
 
@@ -37,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en-IN" className="dark">
       <body className={`${inter.className} min-h-screen bg-[#0d1117] text-white`}>
         {children}
       </body>
