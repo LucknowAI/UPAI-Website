@@ -1,12 +1,14 @@
 import Navbar from "@/components/navbar";
 import Chapters from "@/components/sections/chapters";
-import WorkingGroupsSection from "@/components/sections/working-groups-section";
+import GetInvolvedSection from "@/components/sections/get-involved-section";
 import Footer from "@/components/footer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Labs & Chapters | UP AI Labs",
-  description: "Explore our AI labs and chapters across Uttar Pradesh.",
+  title: "Chapters | UPAI Labs",
+  description:
+    "UPAI Labs chapters. Lucknow AI Labs is Chapter 1, running since November 2023.",
+  alternates: { canonical: "/labs" },
 }
 
 export default function LabsPage() {
@@ -17,7 +19,7 @@ export default function LabsPage() {
         <div className="space-y-12 md:space-y-16 pb-16">
           <Chapters />
           <div className="h-px w-full max-w-5xl mx-auto bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-          <WorkingGroupsSection />
+          <GetInvolvedSection />
         </div>
       </main>
       <Footer />

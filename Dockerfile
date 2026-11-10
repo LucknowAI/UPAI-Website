@@ -1,25 +1,24 @@
 # Base on official Node.js Alpine image
-FROM node:18-alpine AS builder
+FROM node:22-alpine AS builder
 
 # Set working directory
 WORKDIR /app
 
 # Copy package.json and package-lock.json before other files
-# Utilize Docker cache to save re-installing dependencies if unchanged
+# so Docker can cache the dependency install
 COPY package*.json ./
-COPY yarn.lock* ./
 
-# Install dependencies
-RUN yarn install --frozen-lockfile
+# Install exact dependencies from the lockfile
+RUN npm ci
 
 # Copy all files
 COPY . .
 
 # Build app
-RUN yarn build
+RUN npm run build
 
 # Production image, copy all the files and run next
-FROM node:18-alpine AS runner
+FROM node:22-alpine AS runner
 
 WORKDIR /app
 

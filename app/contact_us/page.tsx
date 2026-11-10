@@ -4,8 +4,10 @@ import ContactSection from "@/components/sections/contact-section";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us | UPAI Labs",
-  description: "Get in touch with the UPAI Labs team.",
+  title: "Contact | UPAI Labs",
+  description:
+    "Get in touch with UPAI Labs about partnerships, sponsorship, volunteering, research or anything else.",
+  alternates: { canonical: "/contact_us" },
 }
 
 export default function ContactUsPage() {

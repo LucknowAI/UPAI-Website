@@ -4,8 +4,10 @@ import Footer from "@/components/footer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "FAQs | UP AI Labs",
-  description: "Frequently Asked Questions about UP AI Labs.",
+  title: "FAQs | UPAI Labs",
+  description:
+    "Frequently asked questions about UPAI Labs, Lucknow AI Labs, events, partnerships and volunteering.",
+  alternates: { canonical: "/faqs" },
 }
 
 export default function FAQsPage() {

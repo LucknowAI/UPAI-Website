@@ -11,7 +11,7 @@ export default function AboutSection() {
         {/* About AI Button - Centered */}
         <div className="flex justify-center mb-8">
           <div className="px-6 py-2 bg-[#111] border border-white/10 rounded-full shadow-lg">
-            <p className="text-xl font-medium text-white"><span className="mr-2">•</span>About AI उत्तरप्रदेश</p>
+            <p className="text-xl font-medium text-white"><span className="mr-2">•</span>About UPAI Labs</p>
           </div>
         </div>
 
@@ -20,9 +20,9 @@ export default function AboutSection() {
             {/* Main Heading - Centered on mobile */}
             <div className="mb-6">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                <span className="text-gray-500">Pioneering AI</span>
+                <span className="text-gray-500">Building the AI ecosystem</span>
                 <br />
-                <span className="text-white">Excellence for All</span>
+                <span className="text-white">of Tier-2 India</span>
               </h1>
             </div>
 
@@ -44,7 +44,7 @@ export default function AboutSection() {
               <div className="rounded-xl overflow-hidden h-40">
                 <Image 
                   src="/event.jpg" 
-                  alt="AI UP Community Meetup" 
+                  alt="A UPAI Labs community meetup" 
                   width={200} 
                   height={160}
                   className="w-full h-full object-cover"
@@ -53,14 +53,14 @@ export default function AboutSection() {
               
               {/* Video placeholder */}
               <div className="rounded-xl overflow-hidden bg-gray-800 flex items-center justify-center h-40">
-              <Link 
-                  href="https://www.youtube.com/@lucknowailabs/videos" 
-                  target="_blank" 
+              <Link
+                  href="https://www.youtube.com/@lucknowailabs/videos"
+                  target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Watch our talks on YouTube"
+                  className="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center hover:bg-gray-600 transition-colors"
                 >
-                  <button className="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center hover:bg-gray-600 transition-colors">
-                    <Play className="h-6 w-6 text-white" />
-                  </button>
+                  <Play className="h-6 w-6 text-white" />
                 </Link>
               </div>
             </div>
@@ -69,7 +69,7 @@ export default function AboutSection() {
             <div className="relative rounded-xl overflow-hidden h-48">
               <Image 
                 src="/team.jpg" 
-                alt="AI UP Team" 
+                alt="The UPAI Labs team" 
                 width={400} 
                 height={192}
                 className="w-full h-full object-cover"
@@ -110,6 +110,42 @@ export default function AboutSection() {
                 A self-sustaining AI ecosystem in every high-potential Tier-2 city of India, where students get mentorship, professionals collaborate on cutting-edge research, and entrepreneurs build AI-powered solutions without needing to relocate to a metro.
               </p>
             </div>
+          </div>
+        </div>
+
+        {/* Foundation facts */}
+        <div className="max-w-5xl mx-auto mt-16">
+          <div className="bg-[#111] border border-white/10 rounded-2xl p-8">
+            <h2 className="text-2xl font-bold text-white mb-6">The organisation</h2>
+            <dl className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4 text-sm">
+              <div>
+                <dt className="text-gray-500">Legal name</dt>
+                <dd className="text-white">UPAI Labs Foundation</dd>
+              </div>
+              <div>
+                <dt className="text-gray-500">Type</dt>
+                <dd className="text-white">Section 8 not-for-profit company (Companies Act, 2013)</dd>
+              </div>
+              <div>
+                <dt className="text-gray-500">Incorporated</dt>
+                <dd className="text-white">March 2025, Registrar of Companies, Kanpur</dd>
+              </div>
+              <div>
+                <dt className="text-gray-500">Based in</dt>
+                <dd className="text-white">Lucknow, Uttar Pradesh</dd>
+              </div>
+              <div>
+                <dt className="text-gray-500">Directors</dt>
+                <dd className="text-white">Prashant Kumar Shukla, Ankit Kumar Pal, Abhishek Sahu</dd>
+              </div>
+              <div>
+                <dt className="text-gray-500">Chapters</dt>
+                <dd className="text-white">
+                  Lucknow AI Labs (Chapter 1,{" "}
+                  <a href="https://lucknowai.github.io" className="underline hover:text-secondary">lucknowai.github.io</a>)
+                </dd>
+              </div>
+            </dl>
           </div>
         </div>
 

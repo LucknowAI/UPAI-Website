@@ -1,33 +1,42 @@
 [
-    {
-        "idx": 1,
-        "question":"What is Lucknow AI Labs?",
-        "answer":"Lucknow AI Labs is a nonprofit organization dedicated to growing awareness about artificial intelligence (AI) and its applications. We focus on educating individuals, businesses, and communities on AI technologies while providing hands-on learning opportunities and resources."
-    },
-    {
-        "idx": 2,
-        "question":"Who can benefit from Lucknow AI Labs’ programs?",
-        "answer":"Our programs are open to students, developers, entrepreneurs, and professionals from all industries who are interested in learning more about AI. We welcome anyone who wants to explore how AI can improve their skills or help their organization."
-    },
-    {
-        "idx": 3,
-        "question":"How can I start studying AI?",
-        "answer":"To start studying AI, begin by learning programming languages like Python, as it’s commonly used in AI development. You can also take online courses in AI, machine learning, and data science from platforms like Coursera, edX, or Udemy. Start with the basics of algorithms, data structures, and AI fundamentals."
-    },
-    {
-        "idx": 4,
-        "question":"How can I apply AI to real-world problems?",
-        "answer": "Once you’ve learned the fundamentals, try applying AI to real-world problems by building projects such as a chatbot, image classifier, or recommendation system. You can also participate in Kaggle competitions or contribute to open-source AI projects to gain experience."
-
-    },
-    {
-        "idx": 5,
-        "question":"How can I volunteer at Lucknow AI Labs?",
-        "answer":"You can volunteer by filling out the application form on our website or by contacting us directly via email. We welcome individuals with a passion for AI, education, and community outreach to join our mission of spreading AI awareness."
-    },
-    {
-        "idx": 6,
-        "question":"Do I need AI or technical expertise to volunteer?",
-        "answer":"While having AI or technical expertise is beneficial for certain roles, it is not a requirement for all volunteer positions. We also need volunteers for administrative tasks, event organization, outreach, and content creation. We provide training and guidance to help volunteers succeed in their roles."
-    }
+  {
+    "idx": 1,
+    "question": "What is UPAI Labs?",
+    "answer": "UPAI Labs Foundation (Uttar Pradesh AI Labs) is a Section 8 not-for-profit company, incorporated in March 2025 and based in Lucknow. It builds the AI ecosystem in Tier-2 cities through community events, open-source projects, research and mentorship."
+  },
+  {
+    "idx": 2,
+    "question": "How are UPAI Labs, Lucknow AI Labs and AI Community Lucknow related?",
+    "answer": "Lucknow AI Labs is the first chapter of UPAI Labs and has run events in Lucknow since November 2023. AI Community Lucknow (earlier TFUG Lucknow) is a separate, independent community that runs many events together with us. Our events page shows who organised each event."
+  },
+  {
+    "idx": 3,
+    "question": "Who can take part?",
+    "answer": "Students, developers, researchers, founders and professionals who want to learn about AI or build with it. Beginners are welcome."
+  },
+  {
+    "idx": 4,
+    "question": "How do I join an event?",
+    "answer": "Events are announced and registered on Commudle (commudle.com/communities/upai-labs) and in our WhatsApp and Discord groups. Upcoming events are also listed on our events page."
+  },
+  {
+    "idx": 5,
+    "question": "How can my company or college partner with UPAI Labs?",
+    "answer": "We work with companies, colleges and communities to host events, sponsor hackathons and run workshops. Use the contact form and choose \"Sponsorship or partnership\", and we will get back to you."
+  },
+  {
+    "idx": 6,
+    "question": "How can I volunteer, mentor or give a talk?",
+    "answer": "Volunteer roles and the mentorship programme are described on the Lucknow AI Labs website. To propose a talk or workshop, use the contact form and choose \"Volunteer or mentor\"."
+  },
+  {
+    "idx": 7,
+    "question": "Can I contribute to your projects?",
+    "answer": "Yes. All our projects are open source on GitHub at github.com/LucknowAI. Pick a project, read its README, and open an issue or a pull request."
+  },
+  {
+    "idx": 8,
+    "question": "Are you opening chapters in other cities?",
+    "answer": "Lucknow is our first chapter. We open a new chapter once the one before it can run on its own. If you would like to start one in your city, tell us through the contact form."
+  }
 ]

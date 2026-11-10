@@ -12,19 +12,19 @@ interface Resource {
 const resources: Resource[] = [
   {
     title: "Youtube",
-    image: "/yt.PNG",
+    image: "/yt.jpg",
     link: "https://www.youtube.com/@lucknowailabs/videos",
     type: "Videos"
   },
   {
     title: "AI Career Toolkit",
-    image: "/AICareerToolkit.png",
+    image: "/AICareerToolkit.jpg",
     link: "https://github.com/LucknowAI/AI-Career-Toolkit",
     type: "Guide"
   },
   {
     title: "AI All Resources",
-    image: "/AIAllRes.png",
+    image: "/AIAllRes.jpg",
     link: "https://github.com/LucknowAI/ai_all_resources",
     type: "Collection"
   }
@@ -64,7 +64,7 @@ export default function ResourcesSection() {
               <div className="bg-gray-800 rounded-xl overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]">
                 <div className="relative h-52">
                   <Image
-                    src={resource.image || "/1.png"}
+                    src={resource.image}
                     alt={resource.title}
                     fill
                     className="object-cover"

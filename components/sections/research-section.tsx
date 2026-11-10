@@ -1,27 +1,36 @@
-"use client";
-
-import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { ExternalLink } from "lucide-react";
+import { pastEvents } from "@/lib/events";
 
 const researchProjects = [
   {
-    title: "Project Awadhi",
-    description: "Ongoing research on the Awadhi Language project actively explores preservation strategies, digital tools for grammar and vocabulary, and community-driven revitalization efforts for this Indo-Aryan language spoken in Uttar Pradesh. The initiative is advancing linguistic documentation and interactive learning resources to support cultural heritage. This positions it as a vibrant, under-development showcase for your community site.",
-    image: "/Project_Awadhi.png",
+    title: "Awadhi language project",
+    description:
+      "Awadhi has about 38 million speakers but very little data or software. We are collecting Awadhi text and speech and building speech-to-text for the language. If you speak Awadhi, you can help by recording sentences on the project website.",
+    image: "/Project_Awadhi.jpg",
     link: "https://awadhi-language.vercel.app/",
-    status: "Ongoing"
+    status: "Ongoing",
   },
   {
-    title: "AI Sign Language Translator",
-    description: "Research on the AI-based Sign Language Translator project focuses on developing real-time gesture recognition models to convert sign language into spoken or written text. Leveraging computer vision and machine learning, the initiative aims to bridge communication gaps for the deaf community through an accessible web or app interface. This cutting-edge work highlights your community's commitment to inclusive AI innovations.",
-    image: "/AI_Sign_Language.png",
-    status: "Under Development"
-  }
+    title: "Sign Language Translator",
+    description:
+      "AI for real-time sign language translation, with a survey of recent research. There have been no commits since March 2025, and contributors who want to pick it up are welcome.",
+    image: "/AI_Sign_Language.jpg",
+    link: "https://github.com/LucknowAI/Sign_Language_Translator",
+    status: "Paused",
+  },
+];
+
+const areas = [
+  "Low-resource Indian languages, starting with Awadhi",
+  "Document and image understanding for Indian contexts",
+  "Applied AI agents, such as NAWAB AI",
 ];
 
 export default function ResearchSection() {
+  const paperSessions = pastEvents().filter((e) => e.type === "paper-reading").length;
+
   return (
     <section id="research" className="py-16 md:py-24 relative bg-black text-white">
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
@@ -35,19 +44,20 @@ export default function ResearchSection() {
               </p>
             </div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="text-white">Our </span>
-            <span className="text-gray-500">Initiatives</span>
-          </h2>
+            <span className="text-gray-500">Research</span>
+          </h1>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Discover our latest research projects, initiatives, and explorations into the frontiers of AI.
+            We want Uttar Pradesh to produce AI research, not only use it. That starts with reading
+            papers together and grows into our own work on problems that matter here.
           </p>
         </div>
 
         <div className="flex flex-wrap justify-center gap-8 md:gap-12">
-          {researchProjects.map((project, index) => (
+          {researchProjects.map((project) => (
             <div
-              key={index}
+              key={project.title}
               className="group relative flex flex-col w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-2rem)] rounded-2xl bg-[#111] border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-300 shadow-xl"
             >
               <div className="relative w-full h-64 overflow-hidden bg-[#1a1a1a]">
@@ -56,30 +66,33 @@ export default function ResearchSection() {
                   src={project.image}
                   alt={project.title}
                   fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                   className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-in-out"
                 />
                 <div className="absolute top-4 right-4 z-20">
-                  <span className="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full border border-emerald-500/30 backdrop-blur-sm shadow-sm uppercase tracking-wider">
+                  <span
+                    className={`px-3 py-1 text-xs font-semibold rounded-full border backdrop-blur-sm shadow-sm uppercase tracking-wider ${
+                      project.status === "Ongoing"
+                        ? "bg-emerald-500/20 text-emerald-400 border-emerald-500/30"
+                        : "bg-amber-500/20 text-amber-300 border-amber-500/30"
+                    }`}
+                  >
                     {project.status}
                   </span>
                 </div>
               </div>
               <div className="flex flex-col flex-1 p-6 md:p-8 relative z-20">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-2xl font-bold text-white">
-                    {project.title}
-                  </h3>
-                  {project.link && (
-                    <Link
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-white transition-colors"
-                      title="Visit Project"
-                    >
-                      <ExternalLink className="w-5 h-5" />
-                    </Link>
-                  )}
+                  <h2 className="text-2xl font-bold text-white">{project.title}</h2>
+                  <Link
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors"
+                    aria-label={`Open ${project.title}`}
+                  >
+                    <ExternalLink className="w-5 h-5" />
+                  </Link>
                 </div>
                 <p className="text-gray-400 text-sm leading-relaxed tracking-wide flex-1">
                   {project.description}
@@ -88,15 +101,43 @@ export default function ResearchSection() {
             </div>
           ))}
         </div>
-        <div className="mt-20 text-center">
-          <div className="inline-block p-[2px] rounded-full bg-gradient-to-r from-primary/40 via-secondary to-primary/40 animate-pulse shadow-lg shadow-secondary/20">
-            <div className="px-8 py-3 bg-[#0a0a0a] rounded-full flex items-center gap-3">
-              <span className="text-2xl"></span>
-              <p className="text-xl md:text-2xl font-bold uppercase tracking-wider bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                More research work coming soon
-              </p>
-            </div>
+
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="rounded-2xl bg-[#111] border border-white/10 p-6">
+            <h2 className="text-xl font-bold mb-3">Paper reading</h2>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Members read a recent machine learning paper and discuss it together. We have held{" "}
+              <span className="text-white font-semibold">{paperSessions}</span> paper reading
+              sessions since October 2024, most of them with AI Community Lucknow.
+            </p>
           </div>
+          <div className="rounded-2xl bg-[#111] border border-white/10 p-6">
+            <h2 className="text-xl font-bold mb-3">Areas we work on</h2>
+            <ul className="text-gray-400 text-sm leading-relaxed list-disc pl-5 space-y-1">
+              {areas.map((a) => (
+                <li key={a}>{a}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-2xl bg-[#111] border border-white/10 p-6">
+            <h2 className="text-xl font-bold mb-3">Towards our first publication</h2>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              We are working towards our first research paper. It will be listed here once it is
+              published.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-12 text-center">
+          <p className="text-gray-400 mb-4">
+            Want to present a paper, join the Awadhi work or lead a research project with us?
+          </p>
+          <Link
+            href="/contact_us?topic=research"
+            className="inline-block px-6 py-3 rounded-full bg-white text-black font-medium hover:bg-white/90 transition-colors"
+          >
+            Get in touch about research
+          </Link>
         </div>
       </div>
     </section>

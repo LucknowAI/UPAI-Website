@@ -1,27 +1,12 @@
-import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-
-const projects = [
-  {
-    title: "Nawab AI",
-    description: "Nawab AI is an intelligent city assistant developed by Lucknow AI Labs that helps people explore Lucknow with ease. Using conversational AI, it provides local insights, news updates, and guidance on places, culture, and services around the city. Whether you're a resident or a visitor, Nawab AI acts as your digital companion to discover the best of Lucknow in a simple and interactive way.",
-    image: "/nawab-ai.jpg",
-    link: "https://nawabaifrontend-506068601490.asia-south1.run.app/login"
-  },
-  {
-    title: "Resume Roster",
-    description: "ResumeRoaster is an AI-powered tool that analyzes your resume and gives brutally honest, actionable feedback. Upload your resume and instantly discover weak points in formatting, wording, and impact. Fix them quickly and turn your resume into something recruiters actually want to read.",
-    image: "/resume-roster.jpg",
-    link: "https://resumeroaster-506068601490.asia-south1.run.app/"
-  }
-];
+import { Github, ExternalLink } from "lucide-react";
+import { activeProjects, ALL_PROJECTS_URL } from "@/content/projects";
 
 export default function ProjectsSection() {
   return (
     <section id="projects" className="py-16 md:py-24 relative bg-black text-white">
-      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container relative z-10 max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
@@ -32,62 +17,72 @@ export default function ProjectsSection() {
               </p>
             </div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-white">Featured </span>
-            <span className="text-gray-500">Initiatives</span>
-          </h2>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-white">Built in the </span>
+            <span className="text-gray-500">open</span>
+          </h1>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Explore the latest core tools and systems built by our AI community to empower local ecosystems and advance AI technology.
+            Everything our community builds is open source on{" "}
+            <a href="https://github.com/LucknowAI" className="underline hover:text-white">
+              GitHub
+            </a>
+            . Pick a project, read its README and open an issue or a pull request.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          {projects.map((project, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {activeProjects.map((project) => (
             <div
-              key={index}
-              className="group relative flex flex-col rounded-2xl bg-[#111] border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-300 shadow-xl"
+              key={project.name}
+              className="group flex flex-col rounded-2xl bg-[#111] border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-300 shadow-xl"
             >
-              <div className="relative w-full h-80 overflow-hidden bg-[#1a1a1a]">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 pointer-events-none" />
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out rounded-t-2xl"
-                />
-              </div>
-              <div className="flex flex-col flex-1 p-6 md:p-8 relative z-20">
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                  {project.title}
-                </h3>
-                <p className="text-gray-400 text-base leading-relaxed tracking-wide flex-1">
-                  {project.description}
-                </p>
-
-                <div className="mt-8 pt-6 border-t border-white/10">
+              {project.image && (
+                <div className="relative w-full h-48 overflow-hidden bg-[#1a1a1a]">
+                  <Image
+                    src={project.image}
+                    alt={project.name}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
+                  />
+                </div>
+              )}
+              <div className="flex flex-col flex-1 p-6">
+                <h2 className="text-xl font-bold text-white mb-3">{project.name}</h2>
+                <p className="text-gray-400 text-sm leading-relaxed flex-1">{project.summary}</p>
+                <div className="mt-5 flex flex-wrap items-center gap-4 text-sm">
                   <Link
-                    href={project.link}
+                    href={project.repo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm font-medium text-white hover:text-gray-300 transition-colors"
+                    className="inline-flex items-center gap-1.5 text-white hover:text-secondary transition-colors"
                   >
-                    Launch App <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                    <Github className="w-4 h-4" /> Code
                   </Link>
+                  {project.live && (
+                    <Link
+                      href={project.live.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-white hover:text-secondary transition-colors"
+                    >
+                      <ExternalLink className="w-4 h-4" /> {project.live.label}
+                    </Link>
+                  )}
+                  <span className="ml-auto text-xs text-gray-500">Updated {project.updated}</span>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        <div className="mt-20 text-center">
-          <div className="inline-block p-[2px] rounded-full bg-gradient-to-r from-primary/40 via-primary to-primary/40 animate-pulse shadow-lg shadow-primary/20">
-            <div className="px-8 py-3 bg-[#0a0a0a] rounded-full flex items-center gap-3">
-              <span className="text-2xl"></span>
-              <p className="text-xl md:text-2xl font-bold uppercase tracking-wider bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                More exciting projects coming soon
-              </p>
-            </div>
-          </div>
-        </div>
+
+        <p className="mt-12 text-center text-gray-400">
+          Looking for earlier projects such as Lucknow LLM, UPAI RAG or the AI Career Toolkit?{" "}
+          <a href={ALL_PROJECTS_URL} className="underline hover:text-white">
+            See the full list
+          </a>
+          .
+        </p>
       </div>
     </section>
   );
