@@ -4,8 +4,8 @@ import ContactSection from "@/components/sections/contact-section";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us | UP AI Labs",
-  description: "Get in touch with the UP AI Labs team.",
+  title: "Contact Us | UPAI Labs",
+  description: "Get in touch with the UPAI Labs team.",
 }
 
 export default function ContactUsPage() {
